@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "go-app.fullname" . }}-proxy
+  namespace: nginx-ingress
+spec:
+  ports:
+  - port: 80
+    targetPort: {{ .Values.service.targetPort }}
+  selector:
+    app: {{ include "go-app.fullname" . }}-proxy
