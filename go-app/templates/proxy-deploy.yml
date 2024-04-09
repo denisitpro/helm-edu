@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "go-app.fullname" . }}-proxy
+  namespace: nginx-ingress # set hardcore - todo mind how support namespace ingress nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ include "go-app.fullname" . }}-proxy
+  template:
+    metadata:
+      labels:
+        app: {{ include "go-app.fullname" . }}-proxy
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        resources: {}
+        volumeMounts:
+        - name: nginx-conf
+          mountPath: /etc/nginx/conf.d/default.conf
+          subPath: default.conf
+        ports:
+        - containerPort: {{ .Values.service.targetPort }}
+      volumes:
+      - name: nginx-conf
+        configMap:
+          name: {{ include "go-app.fullname" . }}-proxy-nginx-conf
