@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   go-app:
   - apiVersion: v2
+    appVersion: 1.17.0
+    created: "2024-04-24T11:30:13.207423+03:00"
+    description: Deploy example go app web server
+    digest: df4e2f9c845ac7dbf2ee87ff64eaa5808c7b3fc94b1aa5275b8f45c4e0bd0afa
+    name: go-app
+    type: application
+    urls:
+    - https://denisitpro.github.io/helm-edu/go-app-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-04-10T11:19:46.543519+03:00"
+    created: "2024-04-24T11:30:13.207033+03:00"
     description: Deploy example go app web server
     digest: 4145c1ec424c2f71a7430e2675a9450be454a66c5b257f8372b77fb26dcb75d0
     name: go-app
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://denisitpro.github.io/helm-edu/go-app-0.1.0.tgz
     version: 0.1.0
-generated: "2024-04-10T11:19:46.540755+03:00"
+generated: "2024-04-24T11:30:13.206125+03:00"
