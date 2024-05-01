@@ -122,4 +122,9 @@ affinity: {}
 
 ### custom
 aiName: Alice
-aiTarget: "become strong AI"
+#aiTarget: "become strong AI"
+
+secrets:
+  ai_target:
+    secretName: hcp-vault-secrets
+    secretKey: target1

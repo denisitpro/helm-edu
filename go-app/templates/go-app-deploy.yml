@@ -41,7 +41,10 @@ spec:
             - name: AI_NAME
               value: "{{ .Values.aiName }}"
             - name: AI_TARGET
-              value: "{{ .Values.aiTarget }}"
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.secrets.ai_target.secretName | default "default_value" | quote }}
+                  key: {{ .Values.secrets.ai_target.secretKey | default "default_value" | quote }}
           ports:
             - name: http
               containerPort: {{ .Values.service.targetPort }}
