@@ -125,6 +125,6 @@ aiName: Alice
 #aiTarget: "become strong AI"
 
 secrets:
-  ai_target:
+  aiTarget:
     secretName: hcp-vault-secrets
     secretKey: target1
